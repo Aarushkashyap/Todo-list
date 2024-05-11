@@ -69,10 +69,10 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="mx-3 md:container md:mx-auto my-5 rounded-xl p-5 bg-blue-200 min-h-[80vh] md:w-1/2">
-        <h1 className="font-bold text-center text-xl">taskIt - keep your tasks in check! </h1>
+      <div className="mx-3 md:container md:mx-auto my-5 rounded-xl p-5 bg-blue-300 min-h-[80vh] md:w-1/3">
+        <h1 className="font-bold text-center  text-3xl">taskIt - keep your tasks in check! </h1>
         <div className="addTodo my-5 flex flex-col gap-4">
-          <h2 className="text-lg font-bold"> Add a Task </h2>
+          <h2 className="text-xl font-bold"> Add a Task </h2>
           <input
             onChange={handleChange}
             value={todo}
@@ -81,12 +81,14 @@ function App() {
           />
           <button
             onClick={handleAdd} disabled = {todo.length<=3}
-            className="bg-blue-700 hover:bg-blue-900 p-2 py-1 text-sm font-bold text-white disabled:bg-blue-400 rounded-md"
+            className="bg-blue-600 hover:bg-blue-700 p-2 py-1 text-sm font-bold text-white disabled:bg-blue-400 rounded-md"
           >
             Save
           </button>
         </div>
-        <input className="my-4" onChange={toggleFinished} type="checkbox" checked ={showFinished} /> Show Finished
+        <input className="my-4" onChange={toggleFinished} type="checkbox" checked ={showFinished} />
+        <label className="mx-2" htmlFor="show"> Show Finished</label>
+         <div className="h-[1px] bg-black opacity-20 w-[90%] mx-auto my-2"></div>
         <h2 className="text-lg font-bold">Your Task</h2>
         <div className="todos">
           {todos.length === 0 && <div className="m-5">No Tasks to display</div>}
