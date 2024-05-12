@@ -70,9 +70,9 @@ function App() {
     <>
       <Navbar />
       <div className="mx-3 md:container md:mx-auto my-5 rounded-xl p-5 bg-blue-300 min-h-[80vh] md:w-1/3">
-        <h1 className="font-bold text-center  text-3xl">taskIt - keep your tasks in check! </h1>
+        <h1 className="font-bold text-center  text-3xl">TaskIt - keep your tasks in check! </h1>
         <div className="addTodo my-5 flex flex-col gap-4">
-          <h2 className="text-xl font-bold"> Add a Task </h2>
+          <h2 className="text-xl font-bold "> Add a Task </h2>
           <input
             onChange={handleChange}
             value={todo}
@@ -80,7 +80,7 @@ function App() {
             className="w-full rounded-full px-4 py-1"
           />
           <button
-            onClick={handleAdd} disabled = {todo.length<=3}
+            onClick={handleAdd} disabled = {todo.length<=0}
             className="bg-blue-600 hover:bg-blue-700 p-2 py-1 text-sm font-bold text-white disabled:bg-blue-400 rounded-md"
           >
             Save
