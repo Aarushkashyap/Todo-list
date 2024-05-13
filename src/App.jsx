@@ -3,6 +3,9 @@ import Navbar from "./components/Navbar";
 import { v4 as uuidv4 } from 'uuid';
 import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
+import { FaPlus } from "react-icons/fa";
+
+
 
 function App() {
   const [todo, setTodo] = useState("");
@@ -73,18 +76,22 @@ function App() {
         <h1 className="font-bold text-center  text-3xl">TaskIt - keep your tasks in check! </h1>
         <div className="addTodo my-5 flex flex-col gap-4">
           <h2 className="text-xl font-bold "> Add a Task </h2>
+          <div className="flex gap-2">
           <input
             onChange={handleChange}
             value={todo}
             type="text"
-            className="w-full rounded-full px-4 py-1"
+            className="w-full rounded-full px-4 py-1 "
           />
           <button
             onClick={handleAdd} disabled = {todo.length<=0}
-            className="bg-blue-600 hover:bg-blue-700 p-2 py-1 text-sm font-bold text-white disabled:bg-blue-400 rounded-md"
+            className="bg-blue-600 hover:bg-blue-700 p-2 py-1 text-sm font-bold rounded-xl text-white disabled:bg-blue-400 rounded-md"
           >
-            Save
+            <FaPlus />
+
           </button>
+          </div>
+          
         </div>
         <input className="my-4" onChange={toggleFinished} type="checkbox" checked ={showFinished} />
         <label className="mx-2" htmlFor="show"> Show Finished</label>
